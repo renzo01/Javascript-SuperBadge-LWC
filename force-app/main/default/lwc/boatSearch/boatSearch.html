@@ -3,16 +3,17 @@
     <!-- top -->
     <lightning-layout-item size="12">
       <lightning-card title="Find a Boat">
-        <!-- New Boat button goes here -->
-        <p class="slds-var-p-horizontal_small">
-          <!-- boatSearchForm component goes here -->
+         <lightning-button slot="actions" label="New Boat"></lightning-button>
+        <p class="slds-var-p-horizontal_small slds-align_absolute-center">
+          <c-boat-search-form onsearchoptionchange={searchBoats}></c-boat-search-form>
         </p>
       </lightning-card>
     </lightning-layout-item>
     <!-- buttom -->
     <lightning-layout-item size="12" class="slds-p-top_small slds-is-relative">
       <!-- spinner goes here -->
-      <!-- boatSearchResult goes here -->
+      <c-boat-search-results
+        boats={boats}></c-boat-search-results>
       <!-- onloading={handleLoading} ondoneloading={handleDoneLoading} -->
     </lightning-layout-item>
   </lightning-layout>

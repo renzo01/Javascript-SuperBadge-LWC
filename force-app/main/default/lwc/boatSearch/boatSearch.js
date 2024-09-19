@@ -13,6 +13,7 @@ export default class BoatSearch extends LightningElement {
       boatTypeId: e.detail.value || ""
     }).then((boats) => {
       console.log(boats);
+      this.boats = boats;
       this.isLoading = false;
     });
   }

@@ -1,12 +1,19 @@
-import { LightningElement } from "lwc";
+import { api, LightningElement } from "lwc";
 
 export default class BoatTile extends LightningElement {
-  boat;
+  @api boat;
+  @api
   selectedBoatId;
 
-  get backgroundStyle() {}
+  get backgroundStyle() {
+    return `background: url("${this.boat.Picture__c}") no-repeat center center; background-size: cover;`;
+  }
 
-  get tileClass() {}
+  get tileClass() {
+    return this.boat.id === this.selectedBoatId ? "selected" : "";
+  }
 
-  selectBoat() {}
+  selectBoat() {
+    this.dispatchEvent(new CustomEvent("selectboat", { detail: this.boat.id }));
+  }
 }

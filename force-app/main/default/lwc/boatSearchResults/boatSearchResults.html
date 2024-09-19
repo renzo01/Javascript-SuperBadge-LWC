@@ -1,7 +1,14 @@
 <template>
     <lightning-tabset variant="scoped">
         <lightning-tab label="Gallery">
-            
+            <!-- list of boats by boat type -->
+             <div class="slds-grid slds-wrap">
+                 <template for:each={boats} for:item="boat">
+                    <div class="slds-col slds-size_1-of-3 slds-var-p-around_small" key={boat.Id}>
+                        <c-boat-tile boat={boat}></c-boat-tile>
+                    </div>
+                </template>
+             </div>
         </lightning-tab>
         <lightning-tab label="Boat Editor"></lightning-tab>
         <lightning-tab label="Boats Near Me"></lightning-tab>

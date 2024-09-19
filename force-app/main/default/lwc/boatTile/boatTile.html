@@ -3,8 +3,11 @@
         <div style={backgroundStyle} class="tile"></div>
         <div class="lower-third">
             <div class="boat-details">
-                <h3 class="slds-text-heading_small">{boat.name}</h3>
-                <p class="slds-text-body_small">{boat.description}</p>
+                <h3 class="slds-text-heading_small">{boat.Name}</h3>
+                <p class="slds-text-body_small">{boat.Contact__r.Name}</p>
+                <p class="slds-text-title">price: <lightning-formatted-number currency-code="USD" format-style="currency" value={boat.Price__c}></lightning-formatted-number></p>
+                <p class="slds-text-title">Length: {boat.Length__c}</p>
+                <p class="slds-text-title">Type: {boat.BoatType__r.Name}</p>
             </div>
         </div>
     </div>
